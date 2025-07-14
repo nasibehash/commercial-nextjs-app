@@ -67,6 +67,9 @@ export default function CommercialWebsite() {
                 <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 transition-colors">
                   About
                 </button>
+                <button onClick={() => scrollToSection('products')} className="text-gray-700 hover:text-blue-600 transition-colors">
+                  Products
+                </button>
                 <button onClick={() => scrollToSection('testimonials')} className="text-gray-700 hover:text-blue-600 transition-colors">
                   Testimonials
                 </button>
@@ -100,6 +103,9 @@ export default function CommercialWebsite() {
               </button>
               <button onClick={() => scrollToSection('about')} className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">
                 About
+              </button>
+              <button onClick={() => scrollToSection('products')} className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">
+                Products
               </button>
               <button onClick={() => scrollToSection('testimonials')} className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">
                 Testimonials
