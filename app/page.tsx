@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { LoginButton } from "@/components/auth/login-button"
 import { UserMenu } from "@/components/auth/user-menu"
 import { useAuth } from "@/hooks/use-auth"
+import Link from 'next/link'
 import { 
   ArrowRight, 
   CheckCircle, 
