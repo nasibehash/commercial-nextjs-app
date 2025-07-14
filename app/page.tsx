@@ -6,6 +6,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
+import { LoginButton } from "@/components/auth/login-button"
+import { UserMenu } from "@/components/auth/user-menu"
+import { useAuth } from "@/hooks/use-auth"
 import { 
   ArrowRight, 
   CheckCircle, 
@@ -22,6 +25,7 @@ import {
 
 export default function CommercialWebsite() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { isAuthenticated } = useAuth()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -67,15 +71,19 @@ export default function CommercialWebsite() {
                 <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 transition-colors">
                   About
                 </button>
-                <button onClick={() => scrollToSection('products')} className="text-gray-700 hover:text-blue-600 transition-colors">
+                <Link href="/products" className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">
                   Products
-                </button>
+                </Link>
                 <button onClick={() => scrollToSection('testimonials')} className="text-gray-700 hover:text-blue-600 transition-colors">
                   Testimonials
                 </button>
                 <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 transition-colors">
                   Contact
                 </button>
+                <div className="px-3 py-2">
+                  {isAuthenticated ? <UserMenu /> : <LoginButton variant="outline" size="sm" />}
+                </div>
+                {isAuthenticated ? <UserMenu /> : <LoginButton variant="outline" size="sm" />}
               </div>
             </div>
 
@@ -150,9 +158,9 @@ export default function CommercialWebsite() {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  onClick={() => scrollToSection('services')}
+                  onClick={() => scrollToSection('products')}
                 >
-                  Explore Services
+                  Browse Products
                 </Button>
               </div>
 
