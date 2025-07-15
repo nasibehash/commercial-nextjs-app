@@ -84,7 +84,6 @@ export default function CommercialWebsite() {
                 <div className="px-3 py-2">
                   {isAuthenticated ? <UserMenu /> : <LoginButton variant="outline" size="sm" />}
                 </div>
-                {isAuthenticated ? <UserMenu /> : <LoginButton variant="outline" size="sm" />}
               </div>
             </div>
 
