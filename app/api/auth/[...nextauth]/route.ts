@@ -1,6 +1,7 @@
 import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 import type { NextAuthOptions } from 'next-auth'
+import { NextRequest } from 'next/server'
 
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
@@ -35,6 +36,12 @@ const authOptions: NextAuthOptions = {
   },
 }
 
-const handler = NextAuth(authOptions)
+async function GET(req: NextRequest) {
+  return NextAuth(req, authOptions)
+}
 
-export { handler as GET, handler as POST }
+async function POST(req: NextRequest) {
+  return NextAuth(req, authOptions)
+}
+
+export { GET, POST }
