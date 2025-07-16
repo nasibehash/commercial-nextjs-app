@@ -3,8 +3,6 @@ import GoogleProvider from 'next-auth/providers/google'
 import type { NextAuthOptions } from 'next-auth'
 import type { NextRequest } from 'next/server'
 
-export const dynamic = 'force-dynamic'
-
 const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
